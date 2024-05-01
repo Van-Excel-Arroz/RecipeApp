@@ -12,8 +12,8 @@ export default function RecipeLandingPage() {
 				<Box
 					sx={{
 						width: '65%',
-						height: '100vh',
-						p: '2rem 0 0 4rem',
+						height: '89vh',
+						pl: '4rem',
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'start',
@@ -25,7 +25,8 @@ export default function RecipeLandingPage() {
 					<Typography variant="h2" sx={{ fontWeight: '400' }}>
 						Discover and Share Delicious Recipes
 					</Typography>
-					<Button variant="contained" sx={{ fontSize: '1rem', borderRadius: '50px', m: '0.5rem 0 2rem 0' }}>
+
+					<Button variant="contained" sx={{ fontSize: '1rem', borderRadius: '50px', m: '1rem 0 2rem 0' }}>
 						<Link to="/dashboard" style={{ textDecoration: 'none', color: '#000' }}>
 							Get Started
 						</Link>
@@ -61,7 +62,7 @@ export default function RecipeLandingPage() {
 							objectFit: 'contain',
 							position: 'absolute',
 							top: 0,
-							right: -50,
+							right: -80,
 							overflowY: 'hidden',
 						}}
 					/>
