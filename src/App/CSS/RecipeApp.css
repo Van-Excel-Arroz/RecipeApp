@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Molle&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-  font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
 
 .background-container {
-  /* background-image: url('../src/RecipeApp/img/cool-white-bg.jpg'); */
-  /* background-size: cover;
+	/* background-image: url('../src/RecipeApp/img/cool-white-bg.jpg'); */
+	/* background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed; */
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  overflow: auto;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	overflow: auto;
 }
