@@ -11,7 +11,7 @@ export default function RecipeLandingPage() {
 			<Box sx={{ width: '100%', mx: 'auto', position: 'relative', overflow: 'hidden' }}>
 				<Box
 					sx={{
-						width: '65%',
+						width: '85%',
 						height: '89vh',
 						pl: '4rem',
 						display: 'flex',
