@@ -8,28 +8,30 @@ import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact
 export default function RecipeLandingPage() {
 	return (
 		<>
-			<Box sx={{ width: '100%', mx: 'auto', position: 'relative' }}>
+			<Box sx={{ width: '100%', mx: 'auto', position: 'relative', overflow: 'hidden' }}>
 				<Box
 					sx={{
 						width: '65%',
-						p: '4rem',
+						height: '100vh',
+						p: '2rem 0 0 4rem',
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'start',
 						justifyContent: 'center',
+						overflow: 'auto',
 					}}
 				>
-					<Typography variant="h4">Your Ultimate Culinary Community</Typography>
-					<Typography variant="h1" sx={{ fontWeight: '400' }}>
+					<Typography variant="h5">Your Ultimate Culinary Community</Typography>
+					<Typography variant="h2" sx={{ fontWeight: '400' }}>
 						Discover and Share Delicious Recipes
 					</Typography>
-					<Button variant="contained" sx={{ fontSize: '1.5rem', borderRadius: '50px', m: '2rem 1.4rem' }}>
+					<Button variant="contained" sx={{ fontSize: '1rem', borderRadius: '50px', m: '0.5rem 0 2rem 0' }}>
 						<Link to="/dashboard" style={{ textDecoration: 'none', color: '#000' }}>
 							Get Started
 						</Link>
 					</Button>
 
-					<Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+					<Stack direction="row" spacing={4} mt={1}>
 						<Card sx={{ maxWidth: 185, border: '1px solid black', textAlign: 'center' }}>
 							<CardContent>
 								<DinnerDiningIcon sx={{ fontSize: '4rem' }} />
@@ -50,19 +52,20 @@ export default function RecipeLandingPage() {
 								<Typography>Share your favorite recipes with the community</Typography>
 							</CardContent>
 						</Card>
-					</Box>
+					</Stack>
+					<img
+						src="../public/food-bg.png"
+						style={{
+							width: '40%',
+							height: '100%',
+							objectFit: 'contain',
+							position: 'absolute',
+							top: 0,
+							right: -50,
+							overflowY: 'hidden',
+						}}
+					/>
 				</Box>
-				<img
-					src="../public/food-bg.png"
-					style={{
-						width: '50%',
-						objectFit: 'contain',
-						position: 'absolute',
-						top: 0,
-						right: -100,
-						overflowY: 'hidden',
-					}}
-				/>
 			</Box>
 		</>
 	);

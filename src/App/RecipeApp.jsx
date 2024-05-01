@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RecipeLayout from './RecipeLayout';
+import './CSS/RecipeApp.css';
 
 import RecipeDashboard from './RecipeDashboard';
 import RecipeLandingPage from './RecipeLandingPage';
