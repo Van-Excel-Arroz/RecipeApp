@@ -106,7 +106,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 						variant="contained"
 						type="submit"
 						onClick={handleSubmit}
-						sx={{ width: '50%', display: 'block', mx: 'auto' }}
+						sx={{ width: '30%', display: 'block', mx: 'auto' }}
 					>
 						Create Recipe
 					</Button>
