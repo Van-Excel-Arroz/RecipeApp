@@ -71,10 +71,10 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				TransitionComponent={Transition}
 				PaperProps={{
 					sx: {
-						minHeight: '90vh', // Minimum height of the dialog.
-						maxHeight: '90vh', // Maximum height of the dialog.
-						width: '80%', // Width of the dialog.
-						maxWidth: 'none', // This will override the maxWidth to none.
+						minHeight: '90vh',
+						maxHeight: '90vh',
+						width: '80%',
+						maxWidth: 'none',
 					},
 				}}
 			>
