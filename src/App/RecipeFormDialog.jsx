@@ -12,6 +12,7 @@ import {
 	Step,
 	StepLabel,
 	Typography,
+	Stack,
 } from '@mui/material';
 
 import CloseIcon from '@mui/icons-material/Close';
@@ -102,6 +103,8 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		setActiveStep(prevActiveStep => prevActiveStep - 1);
 	};
 
+	let isFormAlmostFinished = activeStep === steps.length - 2;
+
 	return (
 		<>
 			<Dialog
@@ -142,14 +145,6 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 
 					{getStepContent(activeStep)}
 
-					<Button disabled={activeStep === 0} onClick={handleBack} variant="contained">
-						Back
-					</Button>
-
-					<Button onClick={handleNext} variant="contained">
-						{activeStep === steps.length - 2 ? 'Create Recipe' : 'Next'}
-					</Button>
-
 					{/* <RecipeForm
 						handleSubmit={handleSubmit}
 						handleInputChange={handleInputChange}
@@ -159,14 +154,28 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 					/> */}
 				</DialogContent>
 				<DialogActions sx={{ boxShadow: 4 }}>
-					<Button
+					{/* <Button
 						variant="contained"
 						type="submit"
 						onClick={handleSubmit}
 						sx={{ width: '30%', display: 'block', mx: 'auto' }}
 					>
 						Create Recipe
-					</Button>
+					</Button> */}
+
+					<Stack direction="row" justifyContent="space-between" width="100%">
+						<Button disabled={activeStep === 0} onClick={handleBack} variant="contained">
+							Back
+						</Button>
+
+						<Button
+							onClick={isFormAlmostFinished ? handleSubmit : handleNext}
+							type={isFormAlmostFinished ? 'submit' : ''}
+							variant="contained"
+						>
+							{isFormAlmostFinished ? 'Create Recipe' : 'Next'}
+						</Button>
+					</Stack>
 				</DialogActions>
 			</Dialog>
 		</>
