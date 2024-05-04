@@ -34,6 +34,8 @@ function getStepContent(stepIndex) {
 			return <Typography>Two</Typography>;
 		case 3:
 			return <Typography>Three</Typography>;
+		case 4:
+			return <Typography>Four</Typography>;
 		default:
 			return 'Unknown Step';
 	}
@@ -103,7 +105,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		setActiveStep(prevActiveStep => prevActiveStep - 1);
 	};
 
-	let isFormAlmostFinished = activeStep === steps.length - 2;
+	let isFormAlmostFinished = activeStep === steps.length - 1;
 
 	return (
 		<>
@@ -136,11 +138,11 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				</IconButton>
 				<DialogContent dividers>
 					<Stepper activeStep={activeStep} alternativeLabel>
-						{steps.map(label => {
+						{steps.map(label => (
 							<Step key={label}>
 								<StepLabel>{label}</StepLabel>
-							</Step>;
-						})}
+							</Step>
+						))}
 					</Stepper>
 
 					{getStepContent(activeStep)}
