@@ -1,6 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button, Dialog, DialogContent, DialogTitle, DialogActions, IconButton, Slide } from '@mui/material';
+import {
+	Button,
+	Dialog,
+	DialogContent,
+	DialogTitle,
+	DialogActions,
+	IconButton,
+	Slide,
+	Stepper,
+	Step,
+	StepLabel,
+	Typography,
+} from '@mui/material';
 
 import CloseIcon from '@mui/icons-material/Close';
 import RecipeForm from './RecipeForm';
@@ -8,6 +20,23 @@ import RecipeForm from './RecipeForm';
 const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction="up" ref={ref} {...props} />;
 });
+
+const steps = ['General Information', 'Instructions', 'Ingredients', 'Additional Details', 'Optional Details'];
+
+function getStepContent(stepIndex) {
+	switch (stepIndex) {
+		case 0:
+			return <Typography>Zero</Typography>;
+		case 1:
+			return <Typography>One</Typography>;
+		case 2:
+			return <Typography>Two</Typography>;
+		case 3:
+			return <Typography>Three</Typography>;
+		default:
+			return 'Unknown Step';
+	}
+}
 
 export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 	const [recipe, setRecipe] = useState({
@@ -63,6 +92,16 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		}
 	};
 
+	const [activeStep, setActiveStep] = useState(0);
+
+	const handleNext = () => {
+		setActiveStep(prevActiveStep => prevActiveStep + 1);
+	};
+
+	const handleBack = () => {
+		setActiveStep(prevActiveStep => prevActiveStep - 1);
+	};
+
 	return (
 		<>
 			<Dialog
@@ -93,13 +132,31 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 					<CloseIcon />
 				</IconButton>
 				<DialogContent dividers>
-					<RecipeForm
+					<Stepper activeStep={activeStep} alternativeLabel>
+						{steps.map(label => {
+							<Step key={label}>
+								<StepLabel>{label}</StepLabel>
+							</Step>;
+						})}
+					</Stepper>
+
+					{getStepContent(activeStep)}
+
+					<Button disabled={activeStep === 0} onClick={handleBack} variant="contained">
+						Back
+					</Button>
+
+					<Button onClick={handleNext} variant="contained">
+						{activeStep === steps.length - 2 ? 'Create Recipe' : 'Next'}
+					</Button>
+
+					{/* <RecipeForm
 						handleSubmit={handleSubmit}
 						handleInputChange={handleInputChange}
 						recipe={recipe}
 						errors={errors}
 						emptyTextError={emptyTextError}
-					/>
+					/> */}
 				</DialogContent>
 				<DialogActions sx={{ boxShadow: 4 }}>
 					<Button
