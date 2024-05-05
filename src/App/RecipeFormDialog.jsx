@@ -136,6 +136,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				<IconButton onClick={onHandleClose} sx={{ position: 'absolute', right: 8, top: 8 }}>
 					<CloseIcon />
 				</IconButton>
+
 				<DialogContent dividers>
 					<Stepper activeStep={activeStep} alternativeLabel>
 						{steps.map(label => (
@@ -146,25 +147,8 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 					</Stepper>
 
 					{getStepContent(activeStep)}
-
-					{/* <RecipeForm
-						handleSubmit={handleSubmit}
-						handleInputChange={handleInputChange}
-						recipe={recipe}
-						errors={errors}
-						emptyTextError={emptyTextError}
-					/> */}
 				</DialogContent>
 				<DialogActions sx={{ boxShadow: 4 }}>
-					{/* <Button
-						variant="contained"
-						type="submit"
-						onClick={handleSubmit}
-						sx={{ width: '30%', display: 'block', mx: 'auto' }}
-					>
-						Create Recipe
-					</Button> */}
-
 					<Stack direction="row" justifyContent="space-between" width="100%">
 						<Button disabled={activeStep === 0} onClick={handleBack} variant="contained">
 							Back
