@@ -17,6 +17,7 @@ import {
 
 import CloseIcon from '@mui/icons-material/Close';
 import RecipeForm from './RecipeForm';
+import GeneralDetailsForm from './GeneralDetailsForm';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction="up" ref={ref} {...props} />;
@@ -27,7 +28,11 @@ const steps = ['General Information', 'Instructions', 'Ingredients', 'Additional
 function getStepContent(stepIndex) {
 	switch (stepIndex) {
 		case 0:
-			return <Typography>Zero</Typography>;
+			return (
+				<Typography>
+					<GeneralDetailsForm />
+				</Typography>
+			);
 		case 1:
 			return <Typography>One</Typography>;
 		case 2:
