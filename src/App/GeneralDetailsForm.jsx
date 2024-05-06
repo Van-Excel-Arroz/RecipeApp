@@ -1,6 +1,14 @@
-import { Box, TextField } from '@mui/material';
+import { Box, TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { useState } from 'react';
 
 export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError }) {
+	const [privacy, setPrivacy] = useState('public');
+	const handlePrivacyChange = (event, newPrivacy) => {
+		if (newPrivacy !== null) {
+			setPrivacy(newPrivacy);
+		}
+	};
+
 	return (
 		<>
 			<Box width="80%" mx="auto" display="flex" flexDirection="column" alignItems="center">
@@ -35,6 +43,10 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 					helperText={errors.description ? emptyTextError : ''}
 					inputProps={{ maxLength: 1000 }}
 				/>
+				<ToggleButtonGroup value={privacy} exclusive onChange={handlePrivacyChange}>
+					<ToggleButton value="public">Public</ToggleButton>
+					<ToggleButton value="private">Private</ToggleButton>
+				</ToggleButtonGroup>
 			</Box>
 		</>
 	);
