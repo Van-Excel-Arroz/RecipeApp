@@ -94,13 +94,41 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 					/>
 				);
 			case 1:
-				return <Typography>One</Typography>;
+				return (
+					<InstructionForm
+						handleInputChange={handleInputChange}
+						recipe={recipe}
+						errors={errors}
+						emptyTextError={emptyTextError}
+					/>
+				);
 			case 2:
-				return <Typography>Two</Typography>;
+				return (
+					<IngredientsForm
+						handleInputChange={handleInputChange}
+						recipe={recipe}
+						errors={errors}
+						emptyTextError={emptyTextError}
+					/>
+				);
 			case 3:
-				return <Typography>Three</Typography>;
+				return (
+					<AdditionalDetailsForm
+						handleInputChange={handleInputChange}
+						recipe={recipe}
+						errors={errors}
+						emptyTextError={emptyTextError}
+					/>
+				);
 			case 4:
-				return <Typography>Four</Typography>;
+				return (
+					<OptionalDetailsForm
+						handleInputChange={handleInputChange}
+						recipe={recipe}
+						errors={errors}
+						emptyTextError={emptyTextError}
+					/>
+				);
 			default:
 				return 'Unknown Step';
 		}
