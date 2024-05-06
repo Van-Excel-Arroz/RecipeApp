@@ -43,6 +43,8 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 					helperText={errors.description ? emptyTextError : ''}
 					inputProps={{ maxLength: 1000 }}
 				/>
+
+				<h3>Is this a Private or Public Recipe?</h3>
 				<ToggleButtonGroup value={privacy} exclusive onChange={handlePrivacyChange}>
 					<ToggleButton value="public">Public</ToggleButton>
 					<ToggleButton value="private">Private</ToggleButton>
