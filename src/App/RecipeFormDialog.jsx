@@ -17,6 +17,10 @@ import {
 
 import CloseIcon from '@mui/icons-material/Close';
 import GeneralDetailsForm from './GeneralDetailsForm';
+import InstructionForm from './InstructionForm';
+import IngredientsForm from './IngredientsForm';
+import AdditionalDetailsForm from './AdditionalDetailsForm';
+import OptionalDetailsForm from './OptionalDetailsForm';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction="up" ref={ref} {...props} />;
