@@ -16,35 +16,11 @@ import {
 } from '@mui/material';
 
 import CloseIcon from '@mui/icons-material/Close';
-import RecipeForm from './RecipeForm';
 import GeneralDetailsForm from './GeneralDetailsForm';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction="up" ref={ref} {...props} />;
 });
-
-const steps = ['General Information', 'Instructions', 'Ingredients', 'Additional Details', 'Optional Details'];
-
-function getStepContent(stepIndex) {
-	switch (stepIndex) {
-		case 0:
-			return (
-				<Typography>
-					<GeneralDetailsForm />
-				</Typography>
-			);
-		case 1:
-			return <Typography>One</Typography>;
-		case 2:
-			return <Typography>Two</Typography>;
-		case 3:
-			return <Typography>Three</Typography>;
-		case 4:
-			return <Typography>Four</Typography>;
-		default:
-			return 'Unknown Step';
-	}
-}
 
 export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 	const [recipe, setRecipe] = useState({
@@ -99,6 +75,32 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 			setErrors(newErrors);
 		}
 	};
+
+	const steps = ['General Information', 'Instructions', 'Ingredients', 'Additional Details', 'Optional Details'];
+
+	function getStepContent(stepIndex) {
+		switch (stepIndex) {
+			case 0:
+				return (
+					<GeneralDetailsForm
+						handleInputChange={handleInputChange}
+						recipe={recipe}
+						errors={errors}
+						emptyTextError={emptyTextError}
+					/>
+				);
+			case 1:
+				return <Typography>One</Typography>;
+			case 2:
+				return <Typography>Two</Typography>;
+			case 3:
+				return <Typography>Three</Typography>;
+			case 4:
+				return <Typography>Four</Typography>;
+			default:
+				return 'Unknown Step';
+		}
+	}
 
 	const [activeStep, setActiveStep] = useState(0);
 

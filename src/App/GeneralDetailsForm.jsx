@@ -1,6 +1,6 @@
 import { Box, TextField } from '@mui/material';
 
-export default function GeneralDetailsForm() {
+export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError }) {
 	return (
 		<>
 			<Box width="80%" mx="auto" display="flex" flexDirection="column" alignItems="center">
@@ -14,11 +14,11 @@ export default function GeneralDetailsForm() {
 					multiline
 					rows={1}
 					name="title"
-					// value={recipe.title}
-					// onChange={handleInputChange}
-					// error={errors.title}
-					// helperText={errors.title ? emptyTextError : ''}
-					// inputProps={{ maxLength: 50 }}
+					value={recipe.title}
+					onChange={handleInputChange}
+					error={errors.title}
+					helperText={errors.title ? emptyTextError : ''}
+					inputProps={{ maxLength: 50 }}
 				/>
 				<TextField
 					id="filled-multiline-flexible"
@@ -29,11 +29,11 @@ export default function GeneralDetailsForm() {
 					multiline
 					rows={5}
 					name="description"
-					// value={recipe.description}
-					// onChange={handleInputChange}
-					// error={errors.description}
-					// helperText={errors.description ? emptyTextError : ''}
-					// inputProps={{ maxLength: 1000 }}
+					value={recipe.description}
+					onChange={handleInputChange}
+					error={errors.description}
+					helperText={errors.description ? emptyTextError : ''}
+					inputProps={{ maxLength: 1000 }}
 				/>
 			</Box>
 		</>
