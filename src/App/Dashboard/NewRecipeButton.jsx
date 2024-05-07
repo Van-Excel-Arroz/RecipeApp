@@ -1,5 +1,5 @@
-import RecipeFormDialog from './Forms/RecipeFormDialog';
-import RecipeAlert from './RecipeAlert';
+import RecipeFormDialog from '../Forms/RecipeFormDialog';
+import RecipeAlert from '../Alerts/RecipeAlert';
 import { useState } from 'react';
 import { Button, Tooltip } from '@mui/material';
 
