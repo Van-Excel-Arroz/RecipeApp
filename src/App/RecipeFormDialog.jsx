@@ -79,7 +79,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		}
 	};
 
-	const steps = ['General Information', 'Instructions', 'Ingredients', 'Additional Details', 'Optional Details'];
+	const steps = ['General Information', 'Instructions', 'Ingredients', 'Optional Details'];
 
 	function getStepContent(stepIndex) {
 		switch (stepIndex) {
