@@ -11,7 +11,6 @@ import {
 	Stepper,
 	Step,
 	StepLabel,
-	Typography,
 	Stack,
 } from '@mui/material';
 

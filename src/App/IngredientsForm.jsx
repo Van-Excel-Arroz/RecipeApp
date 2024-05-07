@@ -4,7 +4,6 @@ export default function IngredientsForm({ recipe, handleInputChange, errors, emp
 	return (
 		<>
 			<h1>Ingredients</h1>
-			<h3>What are the Ingredients?</h3>
 			<TextField
 				id="filled-multiline-flexible"
 				label="Ingredients"
