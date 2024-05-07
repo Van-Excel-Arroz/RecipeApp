@@ -3,7 +3,7 @@ import { AppBar, Toolbar, FormControlLabel, Switch } from '@mui/material';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import './CSS/RecipeNav.css';
-import RecipeAppLogo from './RecipeAppLogo';
+import RecipeAppLogo from './Components/RecipeAppLogo';
 
 export default function RecipeNavbar({ theme, onThemeChange }) {
 	console.log(theme);

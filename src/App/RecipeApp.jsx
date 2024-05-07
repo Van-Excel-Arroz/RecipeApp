@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RecipeLayout from './RecipeLayout';
 import './CSS/RecipeApp.css';
 
-import RecipeDashboard from './RecipeDashboard';
-import RecipeLandingPage from './RecipeLandingPage';
+import RecipeDashboard from './Dashboard/RecipeDashboard';
+import RecipeLandingPage from './Landing Page/RecipeLandingPage';
 
 export default function RecipeApp() {
 	return (
