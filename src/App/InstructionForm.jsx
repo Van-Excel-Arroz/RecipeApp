@@ -4,7 +4,7 @@ export default function InstructionForm({ recipe, handleInputChange, errors, emp
 	return (
 		<>
 			<h1>Instruction</h1>
-			<h3>What are the Ingredients?</h3>
+			<h3>What are the Instructions?</h3>
 			<TextField
 				id="filled-multiline-flexible"
 				label="Ingredients"
