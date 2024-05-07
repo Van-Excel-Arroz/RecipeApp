@@ -1,4 +1,4 @@
-import { Box, TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { useState } from 'react';
 
 export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError }) {
@@ -11,45 +11,43 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 
 	return (
 		<>
-			<Box width="80%" mx="auto" display="flex" flexDirection="column" alignItems="center">
-				<h1>General Details</h1>
-				<TextField
-					id="filled-multiline-flexible"
-					label="Title"
-					variant="outlined"
-					fullWidth
-					sx={{ mb: '16px' }}
-					multiline
-					rows={1}
-					name="title"
-					value={recipe.title}
-					onChange={handleInputChange}
-					error={errors.title}
-					helperText={errors.title ? emptyTextError : ''}
-					inputProps={{ maxLength: 50 }}
-				/>
-				<TextField
-					id="filled-multiline-flexible"
-					label="Description"
-					variant="outlined"
-					fullWidth
-					sx={{ mb: '16px' }}
-					multiline
-					rows={5}
-					name="description"
-					value={recipe.description}
-					onChange={handleInputChange}
-					error={errors.description}
-					helperText={errors.description ? emptyTextError : ''}
-					inputProps={{ maxLength: 1000 }}
-				/>
+			<h1>General Details</h1>
+			<TextField
+				id="filled-multiline-flexible"
+				label="Title"
+				variant="outlined"
+				fullWidth
+				sx={{ mb: '16px' }}
+				multiline
+				rows={1}
+				name="title"
+				value={recipe.title}
+				onChange={handleInputChange}
+				error={errors.title}
+				helperText={errors.title ? emptyTextError : ''}
+				inputProps={{ maxLength: 50 }}
+			/>
+			<TextField
+				id="filled-multiline-flexible"
+				label="Description"
+				variant="outlined"
+				fullWidth
+				sx={{ mb: '16px' }}
+				multiline
+				rows={5}
+				name="description"
+				value={recipe.description}
+				onChange={handleInputChange}
+				error={errors.description}
+				helperText={errors.description ? emptyTextError : ''}
+				inputProps={{ maxLength: 1000 }}
+			/>
 
-				<h3>Is this a Private or Public Recipe?</h3>
-				<ToggleButtonGroup value={privacy} exclusive onChange={handlePrivacyChange}>
-					<ToggleButton value="public">Public</ToggleButton>
-					<ToggleButton value="private">Private</ToggleButton>
-				</ToggleButtonGroup>
-			</Box>
+			<h3>Is this a Private or Public Recipe?</h3>
+			<ToggleButtonGroup value={privacy} exclusive onChange={handlePrivacyChange}>
+				<ToggleButton value="public">Public</ToggleButton>
+				<ToggleButton value="private">Private</ToggleButton>
+			</ToggleButtonGroup>
 		</>
 	);
 }

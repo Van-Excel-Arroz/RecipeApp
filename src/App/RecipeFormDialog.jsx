@@ -21,6 +21,7 @@ import InstructionForm from './InstructionForm';
 import IngredientsForm from './IngredientsForm';
 import AdditionalDetailsForm from './AdditionalDetailsForm';
 import OptionalDetailsForm from './OptionalDetailsForm';
+import RecipeFormLayout from './RecipeFormLayout';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction="up" ref={ref} {...props} />;
@@ -86,48 +87,58 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		switch (stepIndex) {
 			case 0:
 				return (
-					<GeneralDetailsForm
-						handleInputChange={handleInputChange}
-						recipe={recipe}
-						errors={errors}
-						emptyTextError={emptyTextError}
-					/>
+					<RecipeFormLayout>
+						<GeneralDetailsForm
+							handleInputChange={handleInputChange}
+							recipe={recipe}
+							errors={errors}
+							emptyTextError={emptyTextError}
+						/>
+					</RecipeFormLayout>
 				);
 			case 1:
 				return (
-					<InstructionForm
-						handleInputChange={handleInputChange}
-						recipe={recipe}
-						errors={errors}
-						emptyTextError={emptyTextError}
-					/>
+					<RecipeFormLayout>
+						<InstructionForm
+							handleInputChange={handleInputChange}
+							recipe={recipe}
+							errors={errors}
+							emptyTextError={emptyTextError}
+						/>
+					</RecipeFormLayout>
 				);
 			case 2:
 				return (
-					<IngredientsForm
-						handleInputChange={handleInputChange}
-						recipe={recipe}
-						errors={errors}
-						emptyTextError={emptyTextError}
-					/>
+					<RecipeFormLayout>
+						<IngredientsForm
+							handleInputChange={handleInputChange}
+							recipe={recipe}
+							errors={errors}
+							emptyTextError={emptyTextError}
+						/>
+					</RecipeFormLayout>
 				);
 			case 3:
 				return (
-					<AdditionalDetailsForm
-						handleInputChange={handleInputChange}
-						recipe={recipe}
-						errors={errors}
-						emptyTextError={emptyTextError}
-					/>
+					<RecipeFormLayout>
+						<AdditionalDetailsForm
+							handleInputChange={handleInputChange}
+							recipe={recipe}
+							errors={errors}
+							emptyTextError={emptyTextError}
+						/>
+					</RecipeFormLayout>
 				);
 			case 4:
 				return (
-					<OptionalDetailsForm
-						handleInputChange={handleInputChange}
-						recipe={recipe}
-						errors={errors}
-						emptyTextError={emptyTextError}
-					/>
+					<RecipeFormLayout>
+						<AdditionalDetailsForm
+							handleInputChange={handleInputChange}
+							recipe={recipe}
+							errors={errors}
+							emptyTextError={emptyTextError}
+						/>
+					</RecipeFormLayout>
 				);
 			default:
 				return 'Unknown Step';
