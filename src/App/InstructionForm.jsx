@@ -3,6 +3,8 @@ import { TextField } from '@mui/material';
 export default function InstructionForm({ recipe, handleInputChange, errors, emptyTextError }) {
 	return (
 		<>
+			<h1>Instruction</h1>
+			<h3>What are the Ingredients?</h3>
 			<TextField
 				id="filled-multiline-flexible"
 				label="Ingredients"
@@ -10,7 +12,7 @@ export default function InstructionForm({ recipe, handleInputChange, errors, emp
 				fullWidth
 				sx={{ marginBottom: '16px' }}
 				multiline
-				rows={4}
+				rows={8}
 				name="ingredients"
 				value={recipe.ingredients}
 				onChange={handleInputChange}
