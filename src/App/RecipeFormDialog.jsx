@@ -18,7 +18,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import GeneralDetailsForm from './GeneralDetailsForm';
 import InstructionForm from './InstructionForm';
 import IngredientsForm from './IngredientsForm';
-import AdditionalDetailsForm from './AdditionalDetailsForm';
 import OptionalDetailsForm from './OptionalDetailsForm';
 import RecipeFormLayout from './RecipeFormLayout';
 
@@ -118,17 +117,6 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 					</RecipeFormLayout>
 				);
 			case 3:
-				return (
-					<RecipeFormLayout>
-						<AdditionalDetailsForm
-							handleInputChange={handleInputChange}
-							recipe={recipe}
-							errors={errors}
-							emptyTextError={emptyTextError}
-						/>
-					</RecipeFormLayout>
-				);
-			case 4:
 				return (
 					<RecipeFormLayout>
 						<OptionalDetailsForm
