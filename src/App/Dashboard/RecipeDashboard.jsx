@@ -1,4 +1,4 @@
-import './CSS/RecipeApp.css';
+import '../CSS/RecipeApp.css';
 
 import RecipeCardGrid from './RecipeCardGrid';
 import NewRecipeButton from './NewRecipeButton';

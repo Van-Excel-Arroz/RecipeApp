@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import RecipeCard from './RecipeCard';
+import RecipeCard from './Recipe Card/RecipeCard';
 import RecipeAlert from '../Alerts/RecipeAlert';
 
 import { Grid } from '@mui/material';
