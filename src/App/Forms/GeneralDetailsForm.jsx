@@ -1,5 +1,6 @@
 import { TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { useState } from 'react';
+import '../CSS/GeneralDetailsForm.css';
 
 export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError }) {
 	const [privacy, setPrivacy] = useState('public');
