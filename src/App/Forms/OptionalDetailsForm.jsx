@@ -16,11 +16,15 @@ export default function OptionalDetailsForm(params) {
 	return (
 		<>
 			<ButtonGroup variant="contained">
-				<Button onClick={reduceServing}>-</Button>
-				<Button variant="outlined" disabled>
-					<Typography sx={{ color: '#000', p: '0 0.5rem' }}>{servings}</Typography>
+				<Button onClick={reduceServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }}>
+					-
 				</Button>
-				<Button onClick={addServing}>+</Button>
+				<Button variant="outlined" disabled>
+					<Typography sx={{ color: '#000', p: '0 0.5rem', fontSize: '1.4rem' }}>{servings}</Typography>
+				</Button>
+				<Button onClick={addServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }}>
+					+
+				</Button>
 			</ButtonGroup>
 		</>
 	);
