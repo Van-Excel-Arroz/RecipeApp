@@ -15,7 +15,8 @@ export default function OptionalDetailsForm(params) {
 	};
 	return (
 		<>
-			<ButtonGroup variant="contained">
+			<h3>Serving</h3>
+			<ButtonGroup variant="contained" sx={{ mb: '2rem' }}>
 				<Button onClick={reduceServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }}>
 					-
 				</Button>
@@ -26,6 +27,9 @@ export default function OptionalDetailsForm(params) {
 					+
 				</Button>
 			</ButtonGroup>
+
+			<h3>Cook Time</h3>
+			
 		</>
 	);
 }
