@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Typography } from '@mui/material';
+import { Button, ButtonGroup, Typography, TextField, Stack } from '@mui/material';
 import { useState } from 'react';
 
 export default function OptionalDetailsForm(params) {
@@ -29,6 +29,43 @@ export default function OptionalDetailsForm(params) {
 			</ButtonGroup>
 
 			<h3>Cook Time</h3>
+			<Stack direction="row" spacing={2}>
+				<TextField
+					type="number"
+					label="Hour"
+					sx={{ width: '100px' }}
+					InputProps={{
+						inputProps: {
+							min: 0,
+							max: 24,
+						},
+					}}
+				></TextField>
+
+				<TextField
+					type="number"
+					label="Minute"
+					sx={{ width: '100px' }}
+					InputProps={{
+						inputProps: {
+							min: 0,
+							max: 60,
+						},
+					}}
+				></TextField>
+
+				<TextField
+					type="number"
+					label="Second"
+					sx={{ width: '100px' }}
+					InputProps={{
+						inputProps: {
+							min: 0,
+							max: 60,
+						},
+					}}
+				></TextField>
+			</Stack>
 		</>
 	);
 }
