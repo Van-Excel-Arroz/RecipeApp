@@ -1,4 +1,5 @@
-import { Button, ButtonGroup, Typography, TextField, Stack } from '@mui/material';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
+import { Button, ButtonGroup, Typography, TextField, Stack, Box } from '@mui/material';
 import { useState } from 'react';
 
 export default function OptionalDetailsForm(params) {
@@ -15,7 +16,8 @@ export default function OptionalDetailsForm(params) {
 	};
 	return (
 		<>
-			<h3>Serving</h3>
+			<h1 style={{ marginBottom: '0' }}>Optional Details</h1>
+			<h3 style={{ marginTop: '0' }}>Serving</h3>
 			<ButtonGroup variant="contained" sx={{ mb: '2rem' }}>
 				<Button onClick={reduceServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }}>
 					-
@@ -29,7 +31,7 @@ export default function OptionalDetailsForm(params) {
 			</ButtonGroup>
 
 			<h3>Cook Time</h3>
-			<Stack direction="row" spacing={2}>
+			<Stack direction="row" spacing={2} mb="2rem">
 				<TextField
 					type="number"
 					label="Hour"
@@ -66,6 +68,22 @@ export default function OptionalDetailsForm(params) {
 					}}
 				></TextField>
 			</Stack>
+
+			<h3>Upload Image</h3>
+			<Box
+				sx={{
+					height: '200px',
+					width: '200px',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					border: '2px dashed #ffcca2',
+					backgroundColor: '#f2f2f2',
+					cursor: 'pointer',
+				}}
+			>
+				<FileUploadIcon sx={{ fontSize: '5rem', color: '#ffcca2' }} />
+			</Box>
 		</>
 	);
 }
