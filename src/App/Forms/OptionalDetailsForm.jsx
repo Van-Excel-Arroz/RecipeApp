@@ -78,7 +78,7 @@ export default function OptionalDetailsForm(params) {
 					alignItems: 'center',
 					justifyContent: 'center',
 					border: '2px dashed #ffcca2',
-					backgroundColor: '#f2f2f2',
+					backgroundColor: '#f5f5f5',
 					cursor: 'pointer',
 				}}
 			>
