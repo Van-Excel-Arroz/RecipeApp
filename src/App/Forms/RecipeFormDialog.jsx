@@ -60,7 +60,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				newErrors[key] = true;
 				isFormValid = false;
 			} else {
-				newErrors[key] = false;
+				newErrobnppoprs[key] = false;
 			}
 		});
 

@@ -29,7 +29,6 @@ export default function OptionalDetailsForm(params) {
 			</ButtonGroup>
 
 			<h3>Cook Time</h3>
-			
 		</>
 	);
 }
