@@ -6,7 +6,6 @@ import './CSS/RecipeNav.css';
 import RecipeAppLogo from './Components/RecipeAppLogo';
 
 export default function RecipeNavbar({ theme, onThemeChange }) {
-	console.log(theme);
 	return (
 		<AppBar position="sticky" className="nav">
 			<Toolbar className="content">

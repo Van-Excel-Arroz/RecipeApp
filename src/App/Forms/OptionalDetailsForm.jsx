@@ -75,14 +75,16 @@ export default function OptionalDetailsForm(params) {
 					height: '200px',
 					width: '200px',
 					display: 'flex',
+					flexDirection: 'column',
 					alignItems: 'center',
 					justifyContent: 'center',
 					border: '2px dashed #ffcca2',
-					backgroundColor: '#f5f5f5',
+					backgroundColor: '#f7f7f7',
 					cursor: 'pointer',
 				}}
 			>
 				<FileUploadIcon sx={{ fontSize: '5rem', color: '#ffcca2' }} />
+				<Typography sx={{ color: '#c1c1c1' }}>Choose a File</Typography>
 			</Box>
 		</>
 	);
