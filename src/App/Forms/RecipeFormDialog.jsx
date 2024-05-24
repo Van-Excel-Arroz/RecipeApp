@@ -72,8 +72,8 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				ingredients: '',
 				instructions: '',
 				description: '',
-			}); //this will clear the form
-			onHandleClose(); // close the dialog
+			});
+			onHandleClose();
 		} else {
 			setErrors(newErrors);
 		}
