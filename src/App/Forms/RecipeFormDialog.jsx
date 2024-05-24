@@ -76,6 +76,9 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				ingredients: '',
 				instructions: '',
 				description: '',
+				privacyState: 'public',
+				servings: 0,
+				cookTime: 0,
 			});
 			setActiveStep(0);
 			onHandleClose();
