@@ -59,7 +59,8 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		const newErrors = {};
 		let isFormValid = true;
 		Object.keys(recipe).forEach(key => {
-			if (recipe[key].trim() === '') {
+			const value = recipe[key];
+			if (typeof value === 'string' && value.trim() === '') {
 				newErrors[key] = true;
 				isFormValid = false;
 			} else {
