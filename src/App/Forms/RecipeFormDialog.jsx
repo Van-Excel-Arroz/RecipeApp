@@ -73,6 +73,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				instructions: '',
 				description: '',
 			});
+			setActiveStep(0);
 			onHandleClose();
 		} else {
 			setErrors(newErrors);
