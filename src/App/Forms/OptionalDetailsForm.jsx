@@ -2,7 +2,7 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { Button, ButtonGroup, Typography, TextField, Stack, Box } from '@mui/material';
 import { useState } from 'react';
 
-export default function OptionalDetailsForm({ handleSetRecipe, r, recipe }) {
+export default function OptionalDetailsForm({ handleSetRecipe, recipe }) {
 	const [servings, setServings] = useState(0);
 
 	const addServing = () => {

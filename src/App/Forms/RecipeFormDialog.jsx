@@ -33,7 +33,11 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		description: '',
 		privacyState: 'public',
 		servings: 0,
-		cookTime: 0,
+		cookTime: {
+			hour: 0,
+			minute: 0,
+			second: 0,
+		},
 	});
 
 	const [errors, setErrors] = useState({
@@ -78,7 +82,11 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				description: '',
 				privacyState: 'public',
 				servings: 0,
-				cookTime: 0,
+				cookTime: {
+					hour: 0,
+					minute: 0,
+					second: 0,
+				},
 			});
 			setActiveStep(0);
 			onHandleClose();
