@@ -128,12 +128,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 			case 3:
 				return (
 					<RecipeFormLayout>
-						<OptionalDetailsForm
-							handleInputChange={handleInputChange}
-							recipe={recipe}
-							errors={errors}
-							emptyTextError={emptyTextError}
-						/>
+						<OptionalDetailsForm handleSetRecipe={setRecipe} recipe={recipe} />
 					</RecipeFormLayout>
 				);
 			default:
