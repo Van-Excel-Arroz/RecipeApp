@@ -34,9 +34,9 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		privacyState: 'public',
 		servings: 0,
 		cookTime: {
-			hour: 0,
-			minute: 0,
-			second: 0,
+			hours: 0,
+			minutes: 0,
+			seconds: 0,
 		},
 	});
 
@@ -55,6 +55,18 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 		if (value.trim() !== '') {
 			setErrors({ ...errors, [name]: false });
 		}
+	};
+
+	const handleCookTimeChange = event => {
+		const { name, value } = event.target;
+		const newValue = Number(value);
+		setRecipe(prevRecipe => ({
+			...recipe,
+			cookTime: {
+				...prevRecipe.cookTime,
+				[name]: newValue,
+			},
+		}));
 	};
 
 	const handleSubmit = event => {
@@ -83,9 +95,9 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				privacyState: 'public',
 				servings: 0,
 				cookTime: {
-					hour: 0,
-					minute: 0,
-					second: 0,
+					hours: 0,
+					minutes: 0,
+					seconds: 0,
 				},
 			});
 			setActiveStep(0);
@@ -136,7 +148,11 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 			case 3:
 				return (
 					<RecipeFormLayout>
-						<OptionalDetailsForm handleSetRecipe={setRecipe} recipe={recipe} />
+						<OptionalDetailsForm
+							handleSetRecipe={setRecipe}
+							recipe={recipe}
+							handleCookTimeChange={handleCookTimeChange}
+						/>
 					</RecipeFormLayout>
 				);
 			default:

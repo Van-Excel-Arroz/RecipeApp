@@ -2,7 +2,7 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { Button, ButtonGroup, Typography, TextField, Stack, Box } from '@mui/material';
 import { useState } from 'react';
 
-export default function OptionalDetailsForm({ handleSetRecipe, recipe }) {
+export default function OptionalDetailsForm({ handleSetRecipe, handleCookTimeChange, recipe }) {
 	const [servings, setServings] = useState(0);
 
 	const addServing = () => {
@@ -46,6 +46,8 @@ export default function OptionalDetailsForm({ handleSetRecipe, recipe }) {
 				<TextField
 					type="number"
 					label="Hour"
+					name="hours"
+					onChange={handleCookTimeChange}
 					sx={{ width: '100px' }}
 					InputProps={{
 						inputProps: {
@@ -58,6 +60,8 @@ export default function OptionalDetailsForm({ handleSetRecipe, recipe }) {
 				<TextField
 					type="number"
 					label="Minute"
+					name="minutes"
+					onChange={handleCookTimeChange}
 					sx={{ width: '100px' }}
 					InputProps={{
 						inputProps: {
@@ -70,6 +74,8 @@ export default function OptionalDetailsForm({ handleSetRecipe, recipe }) {
 				<TextField
 					type="number"
 					label="Second"
+					name="seconds"
+					onChange={handleCookTimeChange}
 					sx={{ width: '100px' }}
 					InputProps={{
 						inputProps: {
