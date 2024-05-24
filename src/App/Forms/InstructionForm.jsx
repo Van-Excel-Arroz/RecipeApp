@@ -6,17 +6,17 @@ export default function InstructionForm({ recipe, handleInputChange, errors, emp
 			<h1>Instruction</h1>
 			<TextField
 				id="filled-multiline-flexible"
-				label="Ingredients"
+				label="Instructions"
 				variant="outlined"
 				fullWidth
 				sx={{ marginBottom: '16px' }}
 				multiline
 				rows={8}
-				name="ingredients"
-				value={recipe.ingredients}
+				name="instructions"
+				value={recipe.instructions}
 				onChange={handleInputChange}
-				error={errors.ingredients}
-				helperText={errors.ingredients ? emptyTextError : ''}
+				error={errors.instructions}
+				helperText={errors.instructions ? emptyTextError : ''}
 			/>
 		</>
 	);
