@@ -1,11 +1,15 @@
 import { TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { useState } from 'react';
 
-export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError }) {
+export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError, handleSetRecipe }) {
 	const [privacy, setPrivacy] = useState('public');
 	const handlePrivacyChange = (event, newPrivacy) => {
 		if (newPrivacy !== null) {
 			setPrivacy(newPrivacy);
+			handleSetRecipe(prevRecipe => ({
+				...recipe,
+				privacyState: newPrivacy,
+			}));
 		}
 	};
 

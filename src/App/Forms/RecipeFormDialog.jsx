@@ -99,6 +99,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 							recipe={recipe}
 							errors={errors}
 							emptyTextError={emptyTextError}
+							handleSetRecipe={setRecipe}
 						/>
 					</RecipeFormLayout>
 				);
