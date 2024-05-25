@@ -73,13 +73,13 @@ export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 						</Tooltip>
 					</Stack>
 
-					<Stack direction="row" spacing={1} alignItems="center">
-						{recipe.servings && (
+					<Stack direction="row" spacing={1} alignItems="center" mb={1}>
+						{recipe.servings ? (
 							<>
 								<RestaurantIcon sx={{ color: '#b0b0b0', fontSize: '1.3rem' }} />
 								<Typography>{recipe.servings}</Typography>
 							</>
-						)}
+						) : null}
 						{recipe.cookTime && (recipe.cookTime.hours || recipe.cookTime.minutes || recipe.cookTime.seconds) ? (
 							<>
 								<AvTimerIcon sx={{ color: '#a1a1a1', fontSize: '1.5rem' }} />
