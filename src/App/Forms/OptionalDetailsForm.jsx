@@ -100,7 +100,7 @@ export default function OptionalDetailsForm({ handleSetRecipe, handleCookTimeCha
 				}}
 			>
 				<FileUploadIcon sx={{ fontSize: '5rem', color: '#ffcca2' }} />
-				<Typography sx={{ color: '#c1c1c1' }}>Choose a File</Typography>
+				<Typography sx={{ color: '#b1b1b1' }}>Choose a File</Typography>
 			</Box>
 		</>
 	);
