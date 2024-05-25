@@ -30,13 +30,13 @@ export default function OptionalDetailsForm({ handleSetRecipe, handleCookTimeCha
 			<h1 style={{ marginBottom: '0' }}>Optional Details</h1>
 			<h3 style={{ marginTop: '0' }}>Serving</h3>
 			<ButtonGroup variant="contained" sx={{ mb: '2rem' }}>
-				<Button onClick={reduceServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }}>
+				<Button onClick={reduceServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }} disabled={servings <= 0}>
 					-
 				</Button>
 				<Button variant="outlined" disabled>
 					<Typography sx={{ color: '#000', p: '0 0.5rem', fontSize: '1.4rem' }}>{servings}</Typography>
 				</Button>
-				<Button onClick={addServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }}>
+				<Button onClick={addServing} sx={{ fontSize: '1.5rem', p: '0 1.5rem' }} disabled={servings === 100}>
 					+
 				</Button>
 			</ButtonGroup>
