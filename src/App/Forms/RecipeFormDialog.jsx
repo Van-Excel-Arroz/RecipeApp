@@ -58,8 +58,14 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 	};
 
 	const handleCookTimeChange = event => {
-		const { name, value } = event.target;
-		const newValue = Number(value);
+		let { name, value } = event.target;
+		let newValue = Number(value);
+
+		if (name === 'hours' && newValue > 24) {
+			newValue = 24;
+		} else if ((name === 'minutes' || name === 'seconds') && newValue > 60) {
+			newValue = 60;
+		}
 		setRecipe(prevRecipe => ({
 			...recipe,
 			cookTime: {
