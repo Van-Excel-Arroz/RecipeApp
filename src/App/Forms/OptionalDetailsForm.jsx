@@ -96,7 +96,6 @@ export default function OptionalDetailsForm({ handleSetRecipe, handleCookTimeCha
 					alignItems: 'center',
 					justifyContent: 'center',
 					border: '2px dashed #ffcca2',
-					backgroundColor: '#f7f7f7',
 					cursor: 'pointer',
 				}}
 			>
