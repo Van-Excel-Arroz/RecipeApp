@@ -49,8 +49,12 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 
 			<h3>Is this a Private or Public Recipe?</h3>
 			<ToggleButtonGroup value={privacy} exclusive onChange={handlePrivacyChange} className="ToggleButtonGroup">
-				<ToggleButton value="public">Public</ToggleButton>
-				<ToggleButton value="private">Private</ToggleButton>
+				<ToggleButton value="public" sx={{ fontSize: '1.5rem' }}>
+					Public
+				</ToggleButton>
+				<ToggleButton value="private" sx={{ fontSize: '1.5rem' }}>
+					Private
+				</ToggleButton>
 			</ToggleButtonGroup>
 		</>
 	);
