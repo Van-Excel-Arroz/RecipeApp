@@ -74,8 +74,12 @@ export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 					</Stack>
 
 					<Stack direction="row" spacing={1} alignItems="center">
-						<RestaurantIcon sx={{ color: '#b0b0b0', fontSize: '1.3rem' }} />
-						<Typography>{recipe.servings}</Typography>
+						{recipe.servings && (
+							<>
+								<RestaurantIcon sx={{ color: '#b0b0b0', fontSize: '1.3rem' }} />
+								<Typography>{recipe.servings}</Typography>
+							</>
+						)}
 						{recipe.cookTime && (recipe.cookTime.hours || recipe.cookTime.minutes || recipe.cookTime.seconds) ? (
 							<>
 								<AvTimerIcon sx={{ color: '#a1a1a1', fontSize: '1.5rem' }} />
