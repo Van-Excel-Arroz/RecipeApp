@@ -23,6 +23,8 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ActionMenuOverlay from './ActionMenuOverlay';
 import RecipeDetailsDialog from './Recipe Details/RecipeDetailsDialog';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import AvTimerIcon from '@mui/icons-material/AvTimer';
 import { useState } from 'react';
 
 export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
@@ -69,6 +71,20 @@ export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 								<KeyboardArrowUpIcon sx={{ fontSize: '1.7rem' }} />
 							</IconButton>
 						</Tooltip>
+					</Stack>
+
+					<Stack direction="row" spacing={1} alignItems="center">
+						<RestaurantIcon sx={{ color: '#b0b0b0', fontSize: '1.3rem' }} />
+						<Typography>{recipe.servings}</Typography>
+						{recipe.cookTime && (recipe.cookTime.hours || recipe.cookTime.minutes || recipe.cookTime.seconds) ? (
+							<>
+								<AvTimerIcon sx={{ color: '#a1a1a1', fontSize: '1.5rem' }} />
+								<Typography>
+									{String(recipe.cookTime.hours).padStart(2, '0')}:{String(recipe.cookTime.minutes).padStart(2, '0')}:
+									{String(recipe.cookTime.seconds).padStart(2, '0')}
+								</Typography>
+							</>
+						) : null}
 					</Stack>
 
 					<CardActions className="card-actions" sx={{ padding: '8px 0' }}>
