@@ -52,9 +52,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 	const handleInputChange = event => {
 		const { name, value } = event.target;
 		setRecipe({ ...recipe, [name]: value });
-		if (value.trim() !== '') {
-			setErrors({ ...errors, [name]: false });
-		}
+		setErrors({ ...errors, [name]: value.trim() === '' });
 	};
 
 	const handleCookTimeChange = event => {
@@ -106,9 +104,11 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 					seconds: 0,
 				},
 			});
+			setShowAlert(false);
 			setActiveStep(0);
 			onHandleClose();
 		} else {
+			setShowAlert(true);
 			setErrors(newErrors);
 		}
 	};
@@ -207,7 +207,6 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 				<IconButton onClick={onHandleClose} sx={{ position: 'absolute', right: 8, top: 8 }}>
 					<CloseIcon />
 				</IconButton>
-
 				<DialogContent dividers>
 					<Stepper activeStep={activeStep} alternativeLabel>
 						{steps.map(label => (
@@ -229,6 +228,11 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 							onClick={isFormAlmostFinished ? handleSubmit : handleNext}
 							type={isFormAlmostFinished ? 'submit' : ''}
 							variant="contained"
+							disabled={
+								(activeStep === 0 && (!recipe.title.trim() || !recipe.description.trim())) ||
+								(activeStep === 1 && !recipe.instructions.trim()) ||
+								(activeStep === 2 && !recipe.ingredients.trim())
+							}
 						>
 							{isFormAlmostFinished ? 'Create Recipe' : 'Next'}
 						</Button>
