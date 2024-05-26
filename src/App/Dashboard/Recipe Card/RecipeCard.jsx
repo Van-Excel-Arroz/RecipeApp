@@ -106,7 +106,7 @@ export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 							<Typography sx={{ fontSize: '0.8rem' }}>Recipe Author Name</Typography>
 						</Stack>
 						<Stack direction="row" alignItems="center" spacing={1} pr={1.2}>
-							<Typography sx={{ fontSize: '0.9rem', color: '#777' }}>{recipe.likes}</Typography>
+							<Typography sx={{ fontSize: '0.9rem', color: '#777' }}>{likedCount}</Typography>
 							<FavoriteIcon sx={{ fontSize: '1.3rem', color: '#777' }} />
 						</Stack>
 					</CardActions>
