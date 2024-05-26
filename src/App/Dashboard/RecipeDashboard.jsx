@@ -2,6 +2,7 @@ import '../CSS/RecipeApp.css';
 
 import RecipeCardGrid from './RecipeCardGrid';
 import NewRecipeButton from './NewRecipeButton';
+import RecipeSearchAppBar from './RecipeSearchAppBar';
 import { useState } from 'react';
 import { Box } from '@mui/material';
 
@@ -50,6 +51,7 @@ export default function RecipeDashboard() {
 	return (
 		<div className="background-container">
 			<Box sx={{ width: '85%', mx: 'auto', mt: '8rem' }}>
+				<RecipeSearchAppBar />
 				<RecipeCardGrid
 					recipes={recipes}
 					removeRecipe={removeRecipe}
