@@ -56,7 +56,7 @@ export default function RecipeDetailsDialog({ open, handleClose, onRemoveRecipe,
 						<Typography sx={{ fontSize: '1.5rem' }}>(242)</Typography>
 					</Stack>
 
-					<Stack direction="row" spacing={0.5} alignItems="center" mb={1} spacing={1}>
+					<Stack direction="row" spacing={1} alignItems="center" mb={1}>
 						{recipe.servings ? (
 							<>
 								<RestaurantIcon sx={{ color: '#5e5e5e', fontSize: '2rem' }} />
