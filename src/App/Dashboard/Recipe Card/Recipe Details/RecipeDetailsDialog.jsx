@@ -49,28 +49,30 @@ export default function RecipeDetailsDialog({ open, handleClose, onRemoveRecipe,
 					{recipe.title}
 				</Typography>
 
-				<Stack direction="row" alignItems="center" spacing={1} mb={2}>
-					<Chip size="large" label="Category" variant="outlined" className="chip" sx={{ fontSize: '1.2rem' }} />
-					<Rating name="read-only" value={3} readOnly sx={{ fontSize: '2rem' }} />
-					<Typography sx={{ fontSize: '1.5rem' }}>(242)</Typography>
-				</Stack>
+				<Stack direction="row" alignItems="center" justifyContent="space-between" mb={2}>
+					<Stack direction="row" spacing={1}>
+						<Chip size="large" label="Category" variant="outlined" className="chip" sx={{ fontSize: '1.2rem' }} />
+						<Rating name="read-only" value={3} readOnly sx={{ fontSize: '2rem' }} />
+						<Typography sx={{ fontSize: '1.5rem' }}>(242)</Typography>
+					</Stack>
 
-				<Stack direction="row" spacing={0.5} alignItems="center" mb={1}>
-					{recipe.servings ? (
-						<>
-							<RestaurantIcon sx={{ color: '#5e5e5e', fontSize: '2rem' }} />
-							<Typography fontSize={30}>{recipe.servings}</Typography>
-						</>
-					) : null}
-					{recipe.cookTime && (recipe.cookTime.hours || recipe.cookTime.minutes || recipe.cookTime.seconds) ? (
-						<>
-							<AvTimerIcon sx={{ color: '#5e5e5e', fontSize: '2.5rem' }} />
-							<Typography fontSize={30}>
-								{String(recipe.cookTime.hours).padStart(2, '0')}:{String(recipe.cookTime.minutes).padStart(2, '0')}:
-								{String(recipe.cookTime.seconds).padStart(2, '0')}
-							</Typography>
-						</>
-					) : null}
+					<Stack direction="row" spacing={0.5} alignItems="center" mb={1} spacing={1}>
+						{recipe.servings ? (
+							<>
+								<RestaurantIcon sx={{ color: '#5e5e5e', fontSize: '2rem' }} />
+								<Typography fontSize={30}>{recipe.servings}</Typography>
+							</>
+						) : null}
+						{recipe.cookTime && (recipe.cookTime.hours || recipe.cookTime.minutes || recipe.cookTime.seconds) ? (
+							<>
+								<AvTimerIcon sx={{ color: '#5e5e5e', fontSize: '2.5rem' }} />
+								<Typography fontSize={30}>
+									{String(recipe.cookTime.hours).padStart(2, '0')}:{String(recipe.cookTime.minutes).padStart(2, '0')}:
+									{String(recipe.cookTime.seconds).padStart(2, '0')}
+								</Typography>
+							</>
+						) : null}
+					</Stack>
 				</Stack>
 
 				<Box
