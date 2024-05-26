@@ -30,6 +30,15 @@ import { useState } from 'react';
 export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 	const [hover, setHover] = useState(false);
 	const [openDialogRecipe, setOpenDialogRecipe] = useState(false);
+	const [likedCount, setLikedCount] = useState(0);
+
+	const handleLikedCount = value => {
+		setLikedCount(prevCount => {
+			const updatedCount = prevCount + value;
+			recipe.likes = updatedCount;
+			return updatedCount;
+		});
+	};
 
 	const handleClickOpen = () => {
 		setOpenDialogRecipe(true);
@@ -51,7 +60,7 @@ export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 				image={image}
 			/>
 			<CardMedia component="img" image={image} height="140" />
-			<ActionMenuOverlay hover={hover} onHandleClickOpen={handleClickOpen} />
+			<ActionMenuOverlay hover={hover} onHandleClickOpen={handleClickOpen} handleLikedCount={handleLikedCount} />
 
 			<Stack direction="column">
 				<Stack direction="column" useFlexGap px={2} pt={1}>
@@ -97,7 +106,7 @@ export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 							<Typography sx={{ fontSize: '0.8rem' }}>Recipe Author Name</Typography>
 						</Stack>
 						<Stack direction="row" alignItems="center" spacing={1} pr={1.2}>
-							<Typography sx={{ fontSize: '0.9rem', color: '#777' }}>123</Typography>
+							<Typography sx={{ fontSize: '0.9rem', color: '#777' }}>{recipe.likes}</Typography>
 							<FavoriteIcon sx={{ fontSize: '1.3rem', color: '#777' }} />
 						</Stack>
 					</CardActions>
