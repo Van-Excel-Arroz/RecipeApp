@@ -12,6 +12,20 @@ export default function RecipeDashboard() {
 	const [isRecipeAdded, setIsRecipeAdded] = useState(false);
 	const [isRecipeDeleted, setIsRecipeDeleted] = useState(false);
 
+	const [recipe, setRecipe] = useState({
+		title: '',
+		ingredients: '',
+		instructions: '',
+		description: '',
+		privacyState: 'public',
+		servings: 0,
+		cookTime: {
+			hours: 0,
+			minutes: 0,
+			seconds: 0,
+		},
+	});
+
 	const addRecipe = recipe => {
 		console.log('Recieved a new recipe', recipe);
 		const id = crypto.randomUUID();
@@ -42,7 +56,13 @@ export default function RecipeDashboard() {
 					setIsRecipeDeleted={setIsRecipeDeleted}
 				/>
 			</Box>
-			<NewRecipeButton addRecipe={addRecipe} isRecipeAdded={isRecipeAdded} setIsRecipeAdded={setIsRecipeAdded} />
+			<NewRecipeButton
+				addRecipe={addRecipe}
+				isRecipeAdded={isRecipeAdded}
+				setIsRecipeAdded={setIsRecipeAdded}
+				recipe={recipe}
+				setRecipe={setRecipe}
+			/>
 		</div>
 	);
 }

@@ -3,7 +3,7 @@ import RecipeAlert from '../Alerts/RecipeAlert';
 import { useState } from 'react';
 import { Button, Tooltip } from '@mui/material';
 
-export default function NewRecipeButton({ addRecipe, isRecipeAdded, setIsRecipeAdded }) {
+export default function NewRecipeButton({ addRecipe, isRecipeAdded, setIsRecipeAdded, recipe, setRecipe }) {
 	const [open, setOpen] = useState(false);
 
 	const handleClickOpen = () => {
@@ -34,7 +34,13 @@ export default function NewRecipeButton({ addRecipe, isRecipeAdded, setIsRecipeA
 					+
 				</Button>
 			</Tooltip>
-			<RecipeFormDialog onAddRecipe={addRecipe} onHandleClose={handleClose} open={open} />
+			<RecipeFormDialog
+				onAddRecipe={addRecipe}
+				onHandleClose={handleClose}
+				open={open}
+				recipe={recipe}
+				setRecipe={setRecipe}
+			/>
 			<RecipeAlert state={isRecipeAdded} setState={setIsRecipeAdded} message={'Successfully Added Recipe!'} />
 		</>
 	);

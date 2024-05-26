@@ -25,21 +25,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 	return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
-	const [recipe, setRecipe] = useState({
-		title: '',
-		ingredients: '',
-		instructions: '',
-		description: '',
-		privacyState: 'public',
-		servings: 0,
-		cookTime: {
-			hours: 0,
-			minutes: 0,
-			seconds: 0,
-		},
-	});
-
+export default function RecipeDialog({ onAddRecipe, onHandleClose, open, recipe, setRecipe }) {
 	const [errors, setErrors] = useState({
 		title: false,
 		ingredients: false,
@@ -104,11 +90,10 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open }) {
 					seconds: 0,
 				},
 			});
-			setShowAlert(false);
+
 			setActiveStep(0);
 			onHandleClose();
 		} else {
-			setShowAlert(true);
 			setErrors(newErrors);
 		}
 	};
