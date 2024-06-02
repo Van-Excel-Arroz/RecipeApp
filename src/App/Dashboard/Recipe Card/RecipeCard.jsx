@@ -70,7 +70,7 @@ export default function RecipeCard({ recipe, image, onRemoveRecipe }) {
 
 					<Stack direction="row" justifyContent="space-between" alignItems="center">
 						<Stack direction="row" alignItems="center" spacing={1}>
-							<Chip size="small" label="Category" variant="outlined" className="chip" />
+							<Chip size="small" label={recipe.category} variant="outlined" className="chip" />
 							<Rating name="read-only" value={3} readOnly sx={{ fontSize: '1.2rem' }} />
 							<Typography sx={{ fontSize: '0.85rem' }}>(242)</Typography>
 						</Stack>

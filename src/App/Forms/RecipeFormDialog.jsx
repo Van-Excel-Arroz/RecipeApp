@@ -156,7 +156,6 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open, recipe,
 
 	const handleNext = () => {
 		setActiveStep(prevActiveStep => prevActiveStep + 1);
-		console.log(recipe);
 	};
 
 	const handleBack = () => {
