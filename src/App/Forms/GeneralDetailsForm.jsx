@@ -1,4 +1,4 @@
-import { TextField, ToggleButton, ToggleButtonGroup, Radio, FormControlLabel, RadioGroup, Box } from '@mui/material';
+import { TextField, ToggleButton, ToggleButtonGroup, Radio, RadioGroup, Box } from '@mui/material';
 import { useState } from 'react';
 
 export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError, handleSetRecipe }) {
@@ -7,7 +7,7 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 		if (newPrivacy !== null) {
 			setPrivacy(newPrivacy);
 			handleSetRecipe(prevRecipe => ({
-				...recipe,
+				...prevRecipe,
 				privacyState: newPrivacy,
 			}));
 		}
@@ -16,10 +16,11 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 	const [selectedCategory, setSelectedCategory] = useState('');
 
 	const handleChange = event => {
-		setSelectedCategory(event.target.value);
+		const newCategory = event.target.value;
+		setSelectedCategory(newCategory);
 		handleSetRecipe(prevRecipe => ({
-			...recipe,
-			category: selectedCategory,
+			...prevRecipe,
+			category: newCategory,
 		}));
 	};
 
@@ -75,53 +76,56 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 
 			<h3>Select one Category</h3>
 			<RadioGroup value={selectedCategory} onChange={handleChange}>
-				<Box
-					sx={{
-						width: '40%',
-						mx: 'auto',
-					}}
-				>
-					<FormControlLabel
-						value="Breakfast"
-						control={<Radio />}
-						label="Breakfast"
-						checked={selectedCategory === 'Breakfast'}
-					/>
-					<FormControlLabel value="Lunch" control={<Radio />} label="Lunch" checked={selectedCategory === 'Lunch'} />
-					<FormControlLabel value="Dinner" control={<Radio />} label="Dinner" checked={selectedCategory === 'Dinner'} />
-					<FormControlLabel
-						value="Appetizer"
-						control={<Radio />}
-						label="Appetizer"
-						checked={selectedCategory === 'Appetizer'}
-					/>
-					<FormControlLabel value="Soup" control={<Radio />} label="Soup" checked={selectedCategory === 'Soup'} />
-					<FormControlLabel value="Salad" control={<Radio />} label="Salad" checked={selectedCategory === 'Salad'} />
-					<FormControlLabel
-						value="Main Dish"
-						control={<Radio />}
-						label="Main Dish"
-						checked={selectedCategory === 'Main Dish'}
-					/>
-					<FormControlLabel
-						value="Side Dish"
-						control={<Radio />}
-						label="Side Dish"
-						checked={selectedCategory === 'Side Dish'}
-					/>
-					<FormControlLabel
-						value="Dessert"
-						control={<Radio />}
-						label="Dessert"
-						checked={selectedCategory === 'Dessert'}
-					/>
-					<FormControlLabel
-						value="Beverage"
-						control={<Radio />}
-						label="Beverage"
-						checked={selectedCategory === 'Beverage'}
-					/>
-					<FormControlLabel value="Salad" control={<Radio />} label="Salad" checked={selectedCategory === 'Salad'} />
+				<Box sx={{ width: '40%', mx: 'auto' }}>
+					<label>
+						<Radio checked={selectedCategory === 'Breakfast'} onChange={handleChange} value="Breakfast" />
+						Breakfast
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Lunch'} onChange={handleChange} value="Lunch" />
+						Lunch
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Dinner'} onChange={handleChange} value="Dinner" />
+						Dinner
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Appetizer'} onChange={handleChange} value="Appetizer" />
+						Appetizer
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Soup'} onChange={handleChange} value="Soup" />
+						Soup
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Salad'} onChange={handleChange} value="Salad" />
+						Salad
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Main Dish'} onChange={handleChange} value="Main Dish" />
+						Main Dish
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Side Dish'} onChange={handleChange} value="Side Dish" />
+						Side Dish
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Dessert'} onChange={handleChange} value="Dessert" />
+						Dessert
+					</label>
+
+					<label>
+						<Radio checked={selectedCategory === 'Beverage'} onChange={handleChange} value="Beverage" />
+						Beverage
+					</label>
 				</Box>
 			</RadioGroup>
 		</>

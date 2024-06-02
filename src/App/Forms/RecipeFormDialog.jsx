@@ -89,6 +89,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open, recipe,
 					minutes: 0,
 					seconds: 0,
 				},
+				category: '',
 			});
 
 			setActiveStep(0);
@@ -155,6 +156,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open, recipe,
 
 	const handleNext = () => {
 		setActiveStep(prevActiveStep => prevActiveStep + 1);
+		console.log(recipe);
 	};
 
 	const handleBack = () => {
