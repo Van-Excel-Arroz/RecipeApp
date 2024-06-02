@@ -215,7 +215,7 @@ export default function RecipeDialog({ onAddRecipe, onHandleClose, open, recipe,
 							type={isFormAlmostFinished ? 'submit' : ''}
 							variant="contained"
 							disabled={
-								(activeStep === 0 && (!recipe.title.trim() || !recipe.description.trim())) ||
+								(activeStep === 0 && (!recipe.title.trim() || !recipe.description.trim() || !recipe.category.trim())) ||
 								(activeStep === 1 && !recipe.instructions.trim()) ||
 								(activeStep === 2 && !recipe.ingredients.trim())
 							}
