@@ -13,10 +13,14 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 		}
 	};
 
-	const [selectedValue, setSelectedValue] = useState('');
+	const [selectedCategory, setSelectedCategory] = useState('');
 
 	const handleChange = event => {
-		setSelectedValue(event.target.value);
+		setSelectedCategory(event.target.value);
+		handleSetRecipe(prevRecipe => ({
+			...recipe,
+			category: selectedCategory,
+		}));
 	};
 
 	return (
@@ -70,7 +74,7 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 			</ToggleButtonGroup>
 
 			<h3>Select one Category</h3>
-			<RadioGroup value={selectedValue} onChange={handleChange}>
+			<RadioGroup value={selectedCategory} onChange={handleChange}>
 				<Box
 					sx={{
 						width: '40%',
@@ -81,38 +85,43 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 						value="Breakfast"
 						control={<Radio />}
 						label="Breakfast"
-						checked={selectedValue === 'Breakfast'}
+						checked={selectedCategory === 'Breakfast'}
 					/>
-					<FormControlLabel value="Lunch" control={<Radio />} label="Lunch" checked={selectedValue === 'Lunch'} />
-					<FormControlLabel value="Dinner" control={<Radio />} label="Dinner" checked={selectedValue === 'Dinner'} />
+					<FormControlLabel value="Lunch" control={<Radio />} label="Lunch" checked={selectedCategory === 'Lunch'} />
+					<FormControlLabel value="Dinner" control={<Radio />} label="Dinner" checked={selectedCategory === 'Dinner'} />
 					<FormControlLabel
 						value="Appetizer"
 						control={<Radio />}
 						label="Appetizer"
-						checked={selectedValue === 'Appetizer'}
+						checked={selectedCategory === 'Appetizer'}
 					/>
-					<FormControlLabel value="Soup" control={<Radio />} label="Soup" checked={selectedValue === 'Soup'} />
-					<FormControlLabel value="Salad" control={<Radio />} label="Salad" checked={selectedValue === 'Salad'} />
+					<FormControlLabel value="Soup" control={<Radio />} label="Soup" checked={selectedCategory === 'Soup'} />
+					<FormControlLabel value="Salad" control={<Radio />} label="Salad" checked={selectedCategory === 'Salad'} />
 					<FormControlLabel
 						value="Main Dish"
 						control={<Radio />}
 						label="Main Dish"
-						checked={selectedValue === 'Main Dish'}
+						checked={selectedCategory === 'Main Dish'}
 					/>
 					<FormControlLabel
 						value="Side Dish"
 						control={<Radio />}
 						label="Side Dish"
-						checked={selectedValue === 'Side Dish'}
+						checked={selectedCategory === 'Side Dish'}
 					/>
-					<FormControlLabel value="Dessert" control={<Radio />} label="Dessert" checked={selectedValue === 'Dessert'} />
+					<FormControlLabel
+						value="Dessert"
+						control={<Radio />}
+						label="Dessert"
+						checked={selectedCategory === 'Dessert'}
+					/>
 					<FormControlLabel
 						value="Beverage"
 						control={<Radio />}
 						label="Beverage"
-						checked={selectedValue === 'Beverage'}
+						checked={selectedCategory === 'Beverage'}
 					/>
-					<FormControlLabel value="Salad" control={<Radio />} label="Salad" checked={selectedValue === 'Salad'} />
+					<FormControlLabel value="Salad" control={<Radio />} label="Salad" checked={selectedCategory === 'Salad'} />
 				</Box>
 			</RadioGroup>
 		</>
