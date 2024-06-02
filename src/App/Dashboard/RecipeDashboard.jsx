@@ -26,6 +26,7 @@ export default function RecipeDashboard() {
 			seconds: 0,
 		},
 		likes: 0,
+		category: '',
 	});
 
 	const addRecipe = recipe => {
