@@ -64,7 +64,7 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 				exclusive
 				onChange={handlePrivacyChange}
 				className="ToggleButtonGroup"
-				sx={{ mb: '2rem' }}
+				sx={{ mb: '1rem' }}
 			>
 				<ToggleButton value="public" sx={{ fontSize: '1.5rem' }}>
 					Public
@@ -76,7 +76,7 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 
 			<h3>Select one Category</h3>
 			<RadioGroup value={selectedCategory} onChange={handleChange}>
-				<Box sx={{ width: '40%', mx: 'auto' }}>
+				<Box sx={{ width: '60%', mx: 'auto' }}>
 					<label>
 						<Radio checked={selectedCategory === 'Breakfast'} onChange={handleChange} value="Breakfast" />
 						Breakfast
