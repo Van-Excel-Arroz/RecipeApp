@@ -28,9 +28,6 @@ export default function RecipeSearchAppBar({ filterRecipes, setSearchTerm }) {
 					<SearchIcon />
 				</IconButton>
 			</Stack>
-			<IconButton color="inherit">
-				<FilterListIcon />
-			</IconButton>
 		</Box>
 	);
 }
