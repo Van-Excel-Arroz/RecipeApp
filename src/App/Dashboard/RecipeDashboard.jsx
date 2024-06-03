@@ -3,6 +3,7 @@ import '../CSS/RecipeApp.css';
 import RecipeCardGrid from './RecipeCardGrid';
 import NewRecipeButton from './NewRecipeButton';
 import RecipeSearchAppBar from './RecipeSearchAppBar';
+import RecipeFilter from './RecipeFilter';
 import { useState, useEffect } from 'react';
 import { Box, Divider } from '@mui/material';
 
@@ -70,6 +71,7 @@ export default function RecipeDashboard() {
 				}}
 			>
 				<RecipeSearchAppBar filterRecipes={filterRecipes} setSearchTerm={setSearchTerm} />
+				<RecipeFilter />
 				<Divider sx={{ mb: '2rem' }} />
 				<RecipeCardGrid
 					recipes={filteredRecipes}
