@@ -3,7 +3,7 @@ import '../CSS/RecipeApp.css';
 import RecipeCardGrid from './RecipeCardGrid';
 import NewRecipeButton from './NewRecipeButton';
 import RecipeSearchAppBar from './RecipeSearchAppBar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Divider } from '@mui/material';
 
 const getInitialLocalStorageData = JSON.parse(localStorage.getItem('recipes'));
@@ -12,6 +12,17 @@ export default function RecipeDashboard() {
 	const [recipes, setRecipes] = useState(getInitialLocalStorageData || []);
 	const [isRecipeAdded, setIsRecipeAdded] = useState(false);
 	const [isRecipeDeleted, setIsRecipeDeleted] = useState(false);
+	const [filteredRecipes, setFilteredRecipes] = useState(getInitialLocalStorageData || []);
+	const [searchTerm, setSearchTerm] = useState('');
+
+	useEffect(() => {
+		filterRecipes(searchTerm);
+	}, [recipes, searchTerm]);
+
+	const filterRecipes = searchTerm => {
+		const filtered = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchTerm.toLowerCase()));
+		setFilteredRecipes(filtered);
+	};
 
 	const [recipe, setRecipe] = useState({
 		title: '',
@@ -58,10 +69,10 @@ export default function RecipeDashboard() {
 					mt: '8rem',
 				}}
 			>
-				<RecipeSearchAppBar />
+				<RecipeSearchAppBar filterRecipes={filterRecipes} setSearchTerm={setSearchTerm} />
 				<Divider sx={{ mb: '2rem' }} />
 				<RecipeCardGrid
-					recipes={recipes}
+					recipes={filteredRecipes}
 					removeRecipe={removeRecipe}
 					isRecipeDeleted={isRecipeDeleted}
 					setIsRecipeDeleted={setIsRecipeDeleted}
