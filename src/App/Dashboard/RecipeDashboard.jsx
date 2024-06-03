@@ -5,7 +5,7 @@ import NewRecipeButton from './NewRecipeButton';
 import RecipeSearchAppBar from './RecipeSearchAppBar';
 import RecipeFilter from './RecipeFilter';
 import { useState, useEffect } from 'react';
-import { Box, Divider } from '@mui/material';
+import { Box, Divider, Stack } from '@mui/material';
 
 const getInitialLocalStorageData = JSON.parse(localStorage.getItem('recipes'));
 
@@ -70,8 +70,10 @@ export default function RecipeDashboard() {
 					mt: '8rem',
 				}}
 			>
-				<RecipeSearchAppBar filterRecipes={filterRecipes} setSearchTerm={setSearchTerm} />
-				<RecipeFilter />
+				<Stack flexDirection="row" justifyContent="space-between" mb={1}>
+					<RecipeSearchAppBar filterRecipes={filterRecipes} setSearchTerm={setSearchTerm} />
+					<RecipeFilter />
+				</Stack>
 				<Divider sx={{ mb: '2rem' }} />
 				<RecipeCardGrid
 					recipes={filteredRecipes}
