@@ -16,7 +16,7 @@ export default function RecipeSearchAppBar({ filterRecipes, setSearchTerm }) {
 
 	return (
 		<Box sx={{ display: 'flex', justifyContent: 'space-between', mb: '2rem' }}>
-			<Stack sx={{ width: '20%' }}>
+			<Stack width="20%" flexDirection="row">
 				<TextField
 					variant="standard"
 					placeholder="Search Recipe"
@@ -24,6 +24,9 @@ export default function RecipeSearchAppBar({ filterRecipes, setSearchTerm }) {
 					value={localSearchTerm}
 					onChange={handleSearchChange}
 				/>
+				<IconButton>
+					<SearchIcon />
+				</IconButton>
 			</Stack>
 			<IconButton color="inherit">
 				<FilterListIcon />
