@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, TextField, Box, Divider } from '@mui/material';
+import { IconButton, TextField, Box } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { useState } from 'react';
@@ -16,7 +16,15 @@ export default function RecipeSearchAppBar({ filterRecipes, setSearchTerm }) {
 
 	return (
 		<Box sx={{ display: 'flex', justifyContent: 'space-between', mb: '2rem' }}>
-			<TextField placeholder="Search Recipe" fullWidth value={localSearchTerm} onChange={handleSearchChange} />
+			<Box sx={{ width: '30%' }}>
+				<TextField
+					variant="standard"
+					placeholder="Search Recipe"
+					fullWidth
+					value={localSearchTerm}
+					onChange={handleSearchChange}
+				/>
+			</Box>
 			<IconButton color="inherit">
 				<FilterListIcon />
 			</IconButton>
