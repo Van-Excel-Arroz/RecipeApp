@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, TextField, Stack } from '@mui/material';
+import { TextField, Stack } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { useState } from 'react';
@@ -16,6 +16,7 @@ export default function RecipeSearchAppBar({ filterRecipes, setSearchTerm }) {
 
 	return (
 		<Stack width="20%" flexDirection="row">
+			<SearchIcon sx={{ fontSize: '20px', m: '5px 5px' }} />
 			<TextField
 				variant="standard"
 				placeholder="Search Recipe"
@@ -23,9 +24,6 @@ export default function RecipeSearchAppBar({ filterRecipes, setSearchTerm }) {
 				value={localSearchTerm}
 				onChange={handleSearchChange}
 			/>
-			<IconButton>
-				<SearchIcon />
-			</IconButton>
 		</Stack>
 	);
 }
