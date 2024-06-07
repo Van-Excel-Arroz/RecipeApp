@@ -15,7 +15,7 @@ export default function RecipeSearchAppBar({ filterRecipes, setSearchTerm }) {
 	};
 
 	return (
-		<Stack width="20%" flexDirection="row">
+		<Stack width="25%" flexDirection="row">
 			<SearchIcon sx={{ fontSize: '20px', m: '5px 5px' }} />
 			<TextField
 				variant="standard"
