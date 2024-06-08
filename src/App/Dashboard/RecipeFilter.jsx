@@ -13,10 +13,12 @@ export default function RecipeFilter() {
 	return (
 		<>
 			<Tooltip title="Filter">
-				<IconButton>
+				<IconButton onClick={handleClick}>
 					<FilterListIcon />
 				</IconButton>
 			</Tooltip>
+
+			<Menu anchorEl={anchorEl} open={open} onClose={() => setAnchorEl(null)}></Menu>
 		</>
 	);
 }
