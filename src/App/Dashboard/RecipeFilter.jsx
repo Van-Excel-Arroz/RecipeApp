@@ -6,6 +6,10 @@ export default function RecipeFilter() {
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
 
+	const handleClick = event => {
+		setAnchorEl(event.currentTarget);
+	};
+
 	return (
 		<>
 			<Tooltip title="Filter">
