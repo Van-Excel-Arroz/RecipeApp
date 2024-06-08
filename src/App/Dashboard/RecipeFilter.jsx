@@ -1,5 +1,5 @@
 import FilterListIcon from '@mui/icons-material/FilterList';
-import { IconButton, Tooltip, Menu, MenuItem } from '@mui/material';
+import { IconButton, Tooltip, Menu, MenuItem, Typography } from '@mui/material';
 import { useState } from 'react';
 
 export default function RecipeFilter() {
@@ -18,7 +18,26 @@ export default function RecipeFilter() {
 				</IconButton>
 			</Tooltip>
 
-			<Menu anchorEl={anchorEl} open={open} onClose={() => setAnchorEl(null)}></Menu>
+			<Menu
+				anchorEl={anchorEl}
+				open={open}
+				onClose={() => setAnchorEl(null)}
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'right',
+				}}
+				transformOrigin={{
+					vertical: 'top',
+					horizontal: 'right',
+				}}
+			>
+				<MenuItem>
+					<Typography>Hello</Typography>
+				</MenuItem>
+				<MenuItem>
+					<Typography>World</Typography>
+				</MenuItem>
+			</Menu>
 		</>
 	);
 }
