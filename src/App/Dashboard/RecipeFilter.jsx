@@ -31,12 +31,9 @@ export default function RecipeFilter() {
 					horizontal: 'right',
 				}}
 			>
-				<MenuItem>
-					<Typography>Hello</Typography>
-				</MenuItem>
-				<MenuItem>
-					<Typography>World</Typography>
-				</MenuItem>
+				<Typography>Category</Typography>
+				<Typography>Servings</Typography>
+				<Typography>Cook Time</Typography>
 			</Menu>
 		</>
 	);
