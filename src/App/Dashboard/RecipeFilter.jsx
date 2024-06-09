@@ -1,5 +1,5 @@
 import FilterListIcon from '@mui/icons-material/FilterList';
-import { IconButton, Tooltip, Menu, MenuItem, Typography } from '@mui/material';
+import { IconButton, Tooltip, Menu, MenuItem, Typography, Button } from '@mui/material';
 import { useState } from 'react';
 
 export default function RecipeFilter() {
@@ -34,6 +34,7 @@ export default function RecipeFilter() {
 				<Typography>Category</Typography>
 				<Typography>Servings</Typography>
 				<Typography>Cook Time</Typography>
+				<Button variant="contained">Show Results</Button>
 			</Menu>
 		</>
 	);
