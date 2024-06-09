@@ -1,5 +1,5 @@
 import FilterListIcon from '@mui/icons-material/FilterList';
-import { IconButton, Tooltip, Menu, MenuItem, Typography, Button } from '@mui/material';
+import { IconButton, Tooltip, Menu, MenuItem, Typography, Button, Divider } from '@mui/material';
 import { useState } from 'react';
 
 export default function RecipeFilter() {
@@ -30,10 +30,19 @@ export default function RecipeFilter() {
 					vertical: 'top',
 					horizontal: 'right',
 				}}
+				PaperProps={{
+					style: {
+						width: '550px',
+						padding: '10px 20px',
+					},
+				}}
 			>
-				<Typography>Category</Typography>
-				<Typography>Servings</Typography>
-				<Typography>Cook Time</Typography>
+				<Typography fontWeight="bold">Category</Typography>
+				<Divider />
+				<Typography fontWeight="bold">Servings</Typography>
+				<Divider />
+				<Typography fontWeight="bold">Cook Time</Typography>
+				<Divider />
 				<Button variant="contained">Show Results</Button>
 			</Menu>
 		</>
