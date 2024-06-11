@@ -1,6 +1,5 @@
 import FilterListIcon from '@mui/icons-material/FilterList';
-import CircleChecked from '@mui/icons-material/CheckCircleOutline';
-import CircleUnchecked from '@mui/icons-material/RadioButtonUnchecked';
+
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import {
@@ -84,13 +83,7 @@ export default function RecipeFilter() {
 								// style={{ border: '1px solid black', borderRadius: '50px', paddingRight: '10px', margin: '8px 10px' }}
 								key={category}
 								control={
-									<Checkbox
-										checked={checkedCategory[category]}
-										onChange={handleCheckboxChange}
-										name={category}
-										icon={<CircleUnchecked />}
-										checkedIcon={<CircleChecked />}
-									/>
+									<Checkbox checked={checkedCategory[category]} onChange={handleCheckboxChange} name={category} />
 								}
 								label={category}
 							/>
