@@ -14,6 +14,8 @@ import {
 	Checkbox,
 	Stack,
 	TextField,
+	ToggleButton,
+	ToggleButtonGroup,
 } from '@mui/material';
 import { useState } from 'react';
 
@@ -31,6 +33,13 @@ export default function RecipeFilter() {
 		Dessert: false,
 		Beverage: false,
 	});
+	const [popularity, setPopularity] = useState('Most Liked');
+
+	const handlePopularityChange = (event, newPopularity) => {
+		if (newPopularity !== null) {
+			setPopularity(newPopularity);
+		}
+	};
 
 	const categories = Object.keys(checkedCategory);
 
@@ -103,8 +112,16 @@ export default function RecipeFilter() {
 					</Button>
 				</Stack>
 
-				<Typography fontWeight="bold">Cook Time</Typography>
+				<Typography fontWeight="bold">Popularity</Typography>
 				<Divider />
+
+				<Stack>
+					<ToggleButtonGroup value={popularity} onChange={handlePopularityChange} exclusive sx={{ m: '20px 0 30px 0' }}>
+						<ToggleButton value="Most Liked">Most Liked</ToggleButton>
+						<ToggleButton value="Least Liked">Least Liked</ToggleButton>
+					</ToggleButtonGroup>
+				</Stack>
+
 				<Button variant="contained">Show Results</Button>
 			</Menu>
 		</>
