@@ -102,11 +102,11 @@ export default function RecipeFilter() {
 				<Divider />
 				<Stack direction="row" m="20px 0 30px 0">
 					<Button variant="contained">
-						<AddIcon />
+						<RemoveIcon />
 					</Button>
 					<TextField variant="outlined" sx={{ m: '0 10px' }} />
 					<Button variant="contained">
-						<RemoveIcon />
+						<AddIcon />
 					</Button>
 				</Stack>
 
