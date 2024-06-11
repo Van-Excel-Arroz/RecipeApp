@@ -79,7 +79,7 @@ export default function RecipeFilter() {
 					<Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
 						{categories.map(category => (
 							<FormControlLabel
-								style={{ border: '1px solid black', borderRadius: '50px', paddingRight: '10px', margin: '8px 10px' }}
+								// style={{ border: '1px solid black', borderRadius: '50px', paddingRight: '10px', margin: '8px 10px' }}
 								key={category}
 								control={
 									<Checkbox
