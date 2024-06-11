@@ -1,6 +1,8 @@
 import FilterListIcon from '@mui/icons-material/FilterList';
 import CircleChecked from '@mui/icons-material/CheckCircleOutline';
 import CircleUnchecked from '@mui/icons-material/RadioButtonUnchecked';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import {
 	IconButton,
 	Tooltip,
@@ -12,6 +14,7 @@ import {
 	FormControlLabel,
 	Checkbox,
 	Stack,
+	TextField,
 } from '@mui/material';
 import { useState } from 'react';
 
@@ -97,6 +100,15 @@ export default function RecipeFilter() {
 
 				<Typography fontWeight="bold">Servings</Typography>
 				<Divider />
+				<Stack direction="row" m="20px 0 30px 0">
+					<Button variant="contained">
+						<AddIcon />
+					</Button>
+					<TextField variant="outlined" sx={{ m: '0 10px' }} />
+					<Button variant="contained">
+						<RemoveIcon />
+					</Button>
+				</Stack>
 
 				<Typography fontWeight="bold">Cook Time</Typography>
 				<Divider />
