@@ -19,22 +19,15 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 
-export default function RecipeFilter() {
+export default function RecipeFilter({
+	checkedCategory,
+	setCheckedCategory,
+	popularity,
+	setPopularity,
+	servingsCount,
+	setServingsCount,
+}) {
 	const [anchorEl, setAnchorEl] = useState(null);
-	const [checkedCategory, setCheckedCategory] = useState({
-		Lunch: false,
-		Breakfast: false,
-		Dinner: false,
-		Appetizer: false,
-		Soup: false,
-		Salad: false,
-		MainDish: false,
-		SideDish: false,
-		Dessert: false,
-		Beverage: false,
-	});
-	const [popularity, setPopularity] = useState('Most Liked');
-	const [servingsCount, setServingsCount] = useState(0);
 
 	const addServing = () => {
 		setServingsCount(prevServings => prevServings + 1);

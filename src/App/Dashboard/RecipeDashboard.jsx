@@ -15,16 +15,20 @@ export default function RecipeDashboard() {
 	const [isRecipeDeleted, setIsRecipeDeleted] = useState(false);
 	const [filteredRecipes, setFilteredRecipes] = useState(getInitialLocalStorageData || []);
 	const [searchTerm, setSearchTerm] = useState('');
-
-	useEffect(() => {
-		filterRecipes(searchTerm);
-	}, [recipes, searchTerm]);
-
-	const filterRecipes = searchTerm => {
-		const filtered = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchTerm.toLowerCase()));
-		setFilteredRecipes(filtered);
-	};
-
+	const [popularity, setPopularity] = useState('Most Liked');
+	const [servingsCount, setServingsCount] = useState(0);
+	const [checkedCategory, setCheckedCategory] = useState({
+		Lunch: false,
+		Breakfast: false,
+		Dinner: false,
+		Appetizer: false,
+		Soup: false,
+		Salad: false,
+		MainDish: false,
+		SideDish: false,
+		Dessert: false,
+		Beverage: false,
+	});
 	const [recipe, setRecipe] = useState({
 		title: '',
 		ingredients: '',
@@ -40,6 +44,15 @@ export default function RecipeDashboard() {
 		likes: 0,
 		category: '',
 	});
+
+	useEffect(() => {
+		filterRecipes(searchTerm);
+	}, [recipes, searchTerm]);
+
+	const filterRecipes = searchTerm => {
+		const filtered = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchTerm.toLowerCase()));
+		setFilteredRecipes(filtered);
+	};
 
 	const addRecipe = recipe => {
 		console.log('Recieved a new recipe', recipe);
@@ -72,7 +85,14 @@ export default function RecipeDashboard() {
 			>
 				<Stack flexDirection="row" justifyContent="space-between" mb={1}>
 					<RecipeSearchAppBar filterRecipes={filterRecipes} setSearchTerm={setSearchTerm} />
-					<RecipeFilter />
+					<RecipeFilter
+						checkedCategory={checkedCategory}
+						setCheckedCategory={setCheckedCategory}
+						popularity={popularity}
+						setPopularity={setPopularity}
+						servingsCount={servingsCount}
+						setServingsCount={setServingsCount}
+					/>
 				</Stack>
 				<Divider sx={{ mb: '2rem' }} />
 				<RecipeCardGrid
