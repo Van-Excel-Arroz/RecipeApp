@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTheme } from '@mui/material/styles';
 import RecipeCard from './Recipe Card/RecipeCard';
 import RecipeAlert from '../Alerts/RecipeAlert';
 
@@ -12,6 +13,8 @@ const images = [
 ];
 
 export default function RecipeCardGrid({ recipes, removeRecipe, isRecipeDeleted, setIsRecipeDeleted }) {
+	const theme = useTheme();
+
 	useEffect(() => {
 		localStorage.setItem('recipes', JSON.stringify(recipes));
 		console.log('Updated recipes:', recipes);
@@ -23,7 +26,7 @@ export default function RecipeCardGrid({ recipes, removeRecipe, isRecipeDeleted,
 				const imageUrl = images[index % images.length];
 
 				return (
-					<Grid item xs={4} key={recipe.id}>
+					<Grid item xs={12} sm={12} md={6} lg={4} key={recipe.id}>
 						<RecipeCard recipe={recipe} image={imageUrl} onRemoveRecipe={removeRecipe} />
 					</Grid>
 				);
