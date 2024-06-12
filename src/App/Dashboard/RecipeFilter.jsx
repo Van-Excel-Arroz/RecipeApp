@@ -34,6 +34,15 @@ export default function RecipeFilter() {
 		Beverage: false,
 	});
 	const [popularity, setPopularity] = useState('Most Liked');
+	const [servingsCount, setServingsCount] = useState(0);
+
+	const addServing = () => {
+		setServingsCount(prevServings => prevServings + 1);
+	};
+
+	const removeServing = () => {
+		setServingsCount(prevServings => (prevServings > 0 ? prevServings - 1 : 0));
+	};
 
 	const handlePopularityChange = (event, newPopularity) => {
 		if (newPopularity !== null) {
@@ -103,18 +112,17 @@ export default function RecipeFilter() {
 				<Typography fontWeight="bold">Servings</Typography>
 				<Divider />
 				<Stack direction="row" m="20px 0 30px 0">
-					<Button variant="contained">
+					<Button variant="contained" onClick={removeServing}>
 						<RemoveIcon />
 					</Button>
-					<TextField variant="outlined" sx={{ m: '0 10px' }} />
-					<Button variant="contained">
+					<TextField variant="outlined" sx={{ m: '0 10px' }} value={servingsCount} />
+					<Button variant="contained" onClick={addServing}>
 						<AddIcon />
 					</Button>
 				</Stack>
 
 				<Typography fontWeight="bold">Popularity</Typography>
 				<Divider />
-
 				<Stack>
 					<ToggleButtonGroup value={popularity} onChange={handlePopularityChange} exclusive sx={{ m: '20px 0 30px 0' }}>
 						<ToggleButton value="Most Liked">Most Liked</ToggleButton>
