@@ -26,6 +26,7 @@ export default function RecipeFilter({
 	setPopularity,
 	servingsCount,
 	setServingsCount,
+	applyFilters,
 }) {
 	const [anchorEl, setAnchorEl] = useState(null);
 
@@ -123,7 +124,9 @@ export default function RecipeFilter({
 					</ToggleButtonGroup>
 				</Stack>
 
-				<Button variant="contained">Show Results</Button>
+				<Button variant="contained" onClick={applyFilters}>
+					Show Results
+				</Button>
 			</Menu>
 		</>
 	);

@@ -54,6 +54,27 @@ export default function RecipeDashboard() {
 		setFilteredRecipes(filtered);
 	};
 
+	const applyFilters = () => {
+		let updatedRecipes = recipes;
+
+		if (Object.values(checkedCategory).some(value => value)) {
+			updatedRecipes = updatedRecipes.filter(recipe => checkedCategory[recipe.category]);
+		}
+
+		if (servingsCount > 0) {
+			updatedRecipes = updatedRecipes.filter(recipe => recipe.servings === servingsCount);
+		}
+
+		updatedRecipes.sort((a, b) => {
+			if (popularity === 'Most Liked') {
+				return b.likes - a.likes;
+			} else {
+				return a.likes - b.likes;
+			}
+		});
+		setFilteredRecipes(updatedRecipes);
+	};
+
 	const addRecipe = recipe => {
 		console.log('Recieved a new recipe', recipe);
 		const id = crypto.randomUUID();
@@ -92,6 +113,7 @@ export default function RecipeDashboard() {
 						setPopularity={setPopularity}
 						servingsCount={servingsCount}
 						setServingsCount={setServingsCount}
+						applyFilters={applyFilters}
 					/>
 				</Stack>
 				<Divider sx={{ mb: '2rem' }} />
