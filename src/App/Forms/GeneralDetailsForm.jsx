@@ -1,4 +1,4 @@
-import { TextField, ToggleButton, ToggleButtonGroup, Radio, RadioGroup, Box } from '@mui/material';
+import { TextField, ToggleButton, ToggleButtonGroup, Radio, RadioGroup, Box, FormControlLabel } from '@mui/material';
 import { useState } from 'react';
 
 export default function GeneralDetailsForm({ recipe, handleInputChange, errors, emptyTextError, handleSetRecipe }) {
@@ -23,6 +23,19 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 			category: newCategory,
 		}));
 	};
+
+	const categories = [
+		'Breakfast',
+		'Lunch',
+		'Dinner',
+		'Appetizer',
+		'Soup',
+		'Salad',
+		'Main Dish',
+		'Side Dish',
+		'Dessert',
+		'Beverage',
+	];
 
 	return (
 		<>
@@ -75,57 +88,12 @@ export default function GeneralDetailsForm({ recipe, handleInputChange, errors, 
 			</ToggleButtonGroup>
 
 			<h3>Select one Category</h3>
+
 			<RadioGroup value={selectedCategory} onChange={handleChange}>
 				<Box sx={{ width: '60%', mx: 'auto' }}>
-					<label>
-						<Radio checked={selectedCategory === 'Breakfast'} onChange={handleChange} value="Breakfast" />
-						Breakfast
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Lunch'} onChange={handleChange} value="Lunch" />
-						Lunch
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Dinner'} onChange={handleChange} value="Dinner" />
-						Dinner
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Appetizer'} onChange={handleChange} value="Appetizer" />
-						Appetizer
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Soup'} onChange={handleChange} value="Soup" />
-						Soup
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Salad'} onChange={handleChange} value="Salad" />
-						Salad
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Main Dish'} onChange={handleChange} value="Main Dish" />
-						Main Dish
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Side Dish'} onChange={handleChange} value="Side Dish" />
-						Side Dish
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Dessert'} onChange={handleChange} value="Dessert" />
-						Dessert
-					</label>
-
-					<label>
-						<Radio checked={selectedCategory === 'Beverage'} onChange={handleChange} value="Beverage" />
-						Beverage
-					</label>
+					{categories.map(category => (
+						<FormControlLabel key={category} value={category} control={<Radio />} label={category} />
+					))}
 				</Box>
 			</RadioGroup>
 		</>
